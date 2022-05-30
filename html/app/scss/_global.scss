@@ -1,0 +1,93 @@
+body {
+    font-size: 18px;
+    font-weight: 400;
+    word-break: break-word;
+    box-sizing: border-box;
+    border: none;
+    font-family: 'Roboto', sans-serif;
+    @media (max-width: 575px) {
+        padding-top:0px;
+    }
+}
+
+body.preloader-site {
+    overflow: hidden;
+}
+
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background-image: url('../images/preloade.gif');
+    background-repeat: no-repeat;
+    background-color: #222;
+    background-position: center;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+a {
+    color: $link_color;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: none;
+        color: $link_color;
+    }
+}
+
+.s-title {
+    color: $brand;
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+
+    span {
+        color: $dark;
+    }
+}
+
+.s-title-light {
+    font-weight: 300;
+    text-transform: none;
+    font-size: 28px;
+    color: $dark;
+    text-align: center;
+    max-width: 50%;
+
+    @media (max-width: 575px) {
+        max-width: 100%;
+        font-size: 22px;
+    }
+}
+
+.sub-title {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 50%;
+
+    @media (max-width: 575px) {
+        max-width: 100%;
+    }
+}
+
+.comment-notes {
+    display: none;
+}
+/* Landscape */
+@media only screen and (min-width: 834px) and (max-width: 1194px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1.5) {
+    .container {
+        max-width: 100%;
+    }
+}

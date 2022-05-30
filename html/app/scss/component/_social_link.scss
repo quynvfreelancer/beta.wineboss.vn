@@ -1,0 +1,115 @@
+.social-share-button {
+    padding: 0px 0;
+    margin-top: 0 !important;
+}
+
+.social-share-button span {
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: 10px;
+}
+
+a.social {
+    position: relative;
+    display: inline-block;
+    margin: .333rem .25rem;
+    border-radius: 100px;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    line-height: 32px;
+    width: 32px;
+    height: 32px;
+    font-size: 0;
+    transition: color .333s;
+}
+
+a.social::before {
+    position: absolute;
+    left: 5px;
+    right: 5px;
+    top: 5px;
+    bottom: 5px;
+    border-radius: 100px;
+    content: '';
+}
+
+a.social::after {
+    font-family: 'fontawesome', sans-serif;
+    font-size: .95rem;
+}
+
+a.social.social-twitter,
+a.social[href^='https://twitter'] {
+    background-color: #00aced;
+}
+
+a.social.social-twitter::after,
+a.social[href^='https://twitter']::after {
+    content: "\f099";
+}
+
+a.social.social-twitter::before,
+a.social[href^='https://twitter']::before {
+    box-shadow: 0 0 0 6px #00aced;
+}
+
+a.social.social-facebook,
+a.social[href^='https://www.facebook'] {
+    background-color: #3b5998;
+}
+
+a.social.social-facebook::after,
+a.social[href^='https://www.facebook']::after {
+    content: "\f09a";
+}
+
+a.social.social-facebook::before,
+a.social[href^='https://www.facebook']::before {
+    box-shadow: 0 0 0 6px #3b5998;
+}
+
+a.social.social-google,
+a.social[href^='https://plus.google'] {
+    background-color: #dd4b39;
+}
+
+a.social.social-google::after,
+a.social[href^='https://plus.google']::after {
+    content: "\f0d5";
+}
+
+a.social.social-google::before,
+a.social[href^='https://plus.google']::before {
+    box-shadow: 0 0 0 6px #dd4b39;
+}
+
+a.social.social-linkedin,
+a.social[href^='https://www.linkedin'] {
+    background-color: #007bb6;
+}
+
+a.social.social-linkedin::after,
+a.social[href^='https://www.linkedin']::after {
+    content: "\f0e1";
+}
+
+a.social.social-linkedin::before,
+a.social[href^='https://www.linkedin']::before {
+    box-shadow: 0 0 0 6px #007bb6;
+}
+
+a.social.social-pintrest,
+a.social[href^='https://pinterest'] {
+    background-color: #cb2027;
+}
+
+a.social.social-pintrest::after,
+a.social[href^='https://pinterest']::after {
+    content: "\f231";
+}
+
+a.social.social-pintrest::before,
+a.social[href^='https://pinterest']::before {
+    box-shadow: 0 0 0 6px #cb2027;
+}

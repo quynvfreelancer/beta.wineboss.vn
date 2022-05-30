@@ -1,0 +1,21 @@
+@import "variable/color";
+@import "variable/font";
+@import "_global";
+// Layout
+@import "layout/header";
+@import "layout/footer";
+@import "layout/sidebar";
+
+@import "component/alert";
+@import "component/breadcrumb";
+@import "component/list_main_cat";
+@import "component/product";
+@import "component/post";
+@import "component/comment";
+@import "component/pagination";
+@import "component/social_link";
+@import "component/box_contact";
+
+@import "pages/homepage";
+@import "layout/responsive";
+

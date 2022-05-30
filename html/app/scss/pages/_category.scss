@@ -1,0 +1,143 @@
+.archive-title {
+    color: $brand;
+}
+
+.archive-description {
+    margin: 15px auto;
+    font-size: 15px;
+
+    @media (max-width: 575px) {
+        max-width: 100%;
+    }
+}
+
+.author-desc {
+    background-color: #f1f1f1;
+    padding: 15px;
+    border-radius: 15px;
+
+    p {
+        margin-bottom: 0;
+
+    }
+}
+
+.archive-description {
+    font-size: 15px;
+}
+
+.archive-description .more-tag {
+    padding: 5px 15px;
+    text-align: center;
+    margin: 15px auto;
+    font-weight: 700;
+    color: #fff;
+    background: $second_text;
+    width: 180px;
+    display: block;
+    border-radius: 4px;
+}
+
+.archive-description .more-tag:hover {
+    color: #fff;
+    background-color: $second_text;
+}
+
+.archive-description .more-tag~* {
+    display: none;
+}
+
+.list-post-cat {
+    margin-top: 15px;
+
+    .post {
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+        border-bottom: 1px solid $border;
+
+        &:last-child {
+            border: none;
+        }
+
+        &:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        @media (max-width: 575px) {
+            &:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+        }
+    }
+
+    .post-title {
+        font-size: 18px;
+        line-height: 1.3;
+
+        @media (max-width: 575px) {
+            font-size: 15px;
+        }
+
+        a {
+            color: $dark;
+
+            &:hover {
+                color: $brand;
+            }
+        }
+    }
+
+    .post-thumbnail {
+        float: left;
+        width: 290px;
+        margin-right: 10px;
+        height: 175px;
+
+        @media (max-width: 575px) {
+            width: 150px;
+            height: 100px;
+            float: left;
+            margin-right: 10px;
+        }
+    }
+
+    .post-excerpt {
+        font-size: 15px;
+
+        @media (max-width: 575px) {
+            display: none;
+        }
+    }
+}
+
+.featured-post-cat {
+    padding-bottom: 15px;
+
+    .post-thumbnail {
+        margin-bottom: 15px;
+        height: 200px;
+    }
+
+    .post-title {
+        font-size: 18px;
+        font-weight: 700;
+
+        a {
+            color: $dark;
+
+            &:hover {
+                color: $brand;
+            }
+        }
+    }
+
+    @media (max-width: 575px) {
+        .post {
+            margin-bottom: 15px;
+        }
+    }
+}

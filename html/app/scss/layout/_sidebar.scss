@@ -1,0 +1,122 @@
+.sidebar {
+    border-left: 1px solid $border;
+
+    &.sidebar-single-product {
+        border: none;
+    }
+
+    .sticky {
+        position: sticky;
+        z-index: 2;
+        top: 60px;
+    }
+
+    .widget {
+        padding: 30px;
+        margin-bottom: 30px;
+        background-color: $light;
+        -webkit-filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.1));
+        filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.1));
+        @media(max-width: 575px){
+            padding: 0;
+            box-shadow: none;
+            filter: none;
+            -webkit-filter: none;
+        }
+    }
+
+    .widget-title,
+    .widget-title a {
+        color: $brand;
+        font-family: $font_title;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 15px;
+
+    }
+
+    .widget-title {
+        margin-bottom: 10px;
+    }
+
+}
+
+.widget-menu {
+    .list-cat-side {
+        padding-left: 0px;
+        list-style: none;
+        margin-bottom: 0;
+    }
+
+    .list-bullet {
+        padding-left: 15px;
+        list-style: square;
+    }
+
+    li {
+        padding: 8px 0;
+        border-bottom: 1px dashed $border;
+        font-size: 14px;
+
+        &:last-child {
+            border: none;
+            padding-bottom: 0;
+        }
+    }
+
+    .list-bullet {
+        li {
+            font-weight: 500;
+        }
+    }
+
+    a {
+        color: $dark;
+        display: flex;
+
+        &:hover {
+            color: $brand;
+        }
+    }
+
+    .number {
+        margin-left: auto;
+        color: $second_text;
+        font-weight: 400;
+    }
+}
+
+.widget-recent-post {
+    .post {
+        padding: 15px 0;
+        border-bottom: 1px dashed $border;
+
+        &:first-child {
+            padding-top: 0;
+        }
+
+        &:last-child {
+            padding-bottom: 0;
+            border: none;
+        }
+
+        &:after {
+            content: '';
+            display: table;
+            clear: both;
+        }
+
+        &-thumbnail {
+            width: 100px;
+            height: 65px;
+            float: left;
+            margin-right: 10px;
+        }
+
+        &-title {
+            font-size: 13px;
+            line-height: 1.4;
+            margin-bottom: 0;
+        }
+    }
+}

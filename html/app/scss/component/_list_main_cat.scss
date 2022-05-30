@@ -1,0 +1,269 @@
+.list-main-cat {
+    padding-left: 0;
+    margin-bottom: 0;
+    box-shadow: 0 9px 27px 0 rgba(36, 36, 36, 0.2);
+    background: $light;
+    border-radius: 5px;
+
+
+    >li {
+        font-size: 14px;
+        font-weight: 400;
+        display: block;
+        position: relative;
+
+        &:last-child {
+            border: none;
+        }
+
+        >a {
+            color: $dark;
+        }
+    }
+
+    >.menu-item-has-children {
+        @media (max-width: 575px) {
+            &::before {
+                display: none !important;
+            }
+        }
+
+        >a {
+            position: relative;
+
+            &:hover,
+            &:focus {
+                color: $dark;
+            }
+
+            @media (max-width: 575px) {
+                background: none;
+                color: $dark;
+
+                &:hover,
+                &:focus {
+                    background: none;
+                }
+            }
+        }
+
+        &:before {
+            content: "";
+            width: 26px;
+            height: 100%;
+            background-color: $light;
+            display: block;
+            position: absolute;
+            top: 0px;
+            left: 100%;
+            z-index: 3;
+            margin-left: -10px;
+            opacity: 0;
+        }
+
+        &:after {
+            content: "\f105";
+            font: normal normal normal 12px/1 FontAwesome;
+            display: block;
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            margin-top: -5px;
+            z-index: 3;
+            color: $dark;
+            text-align: center;
+
+            @media (max-width: 575px) {
+                right: 0;
+            }
+        }
+
+        &:hover {
+            >a {
+                color: $brand;
+                background-color: $light;
+            }
+
+            &:before {
+                opacity: 1;
+            }
+
+            &:after {
+                color: $brand;
+            }
+
+            >ul {
+                display: block;
+            }
+        }
+    }
+
+    a {
+        display: block;
+        padding: 10px 10px;
+        transition: all 0.3s;
+        color: $brand;
+    }
+}
+
+.list-main-cat {
+    >li {
+        position: relative;
+        z-index: 2;
+
+        >ul {
+            position: absolute;
+            padding-top: 7px;
+            padding-bottom: 7px;
+            top: -1px;
+            left: 100%;
+            min-width: 200px;
+            background-color: $light;
+            z-index: 2;
+            display: none;
+            list-style: none;
+            padding-left: 5px;
+            li {
+                font-size: 14px;
+            }
+
+            a {
+                color: $brand;
+                padding: 7px 10px;
+                position: relative;
+
+                &:before {
+                    content: "";
+                    display: block;
+                    border-top: 1px solid $brand;
+                    position: absolute;
+                    top: 100%;
+                    left: 10px;
+                    width: 0;
+                    transition: all 0.3s;
+                }
+
+                &:hover {
+                    color: $brand;
+
+                    &::before {
+                        width: 20px;
+                    }
+                }
+            }
+
+            li:last-child {
+                a:before {
+                    display: none;
+                }
+            }
+
+            >a {
+                &:before {
+                    content: "";
+                    display: block;
+                    width: 20px;
+                    height: 20px;
+                    position: absolute;
+                    top: 50%;
+                    margin-top: -10px;
+                    border-radius: 3px;
+                    left: 5px;
+                    background-size: 15px auto;
+                    background-position: 50%;
+                    background-repeat: no-repeat;
+                }
+            }
+        }
+
+        >ul {
+            @media (max-width: 575px) {
+                &:after{
+                    display: none;
+                }
+                position: relative;
+                left: 30px;
+                right: auto;
+                background: none;
+                width: 100%;
+                margin-top: -10px;
+                padding-top: 0;
+                top: 100%;
+                border-left: 1px solid $border;
+                li{
+                    position: relative;
+                    &:before{
+                        content: '';
+                        width: 10px;
+                        border-top: 1px solid $border;
+                        position: absolute;
+                        left: -5px;
+                        top: 50%;
+                        margin-top: -2px;
+                        display: block;
+                        background-size: 5px auto;
+                    }
+                }
+                
+            }
+        }
+    }
+
+    @for $i from 1 through 20 {
+        .icon-#{$i} {
+            >a {
+                &:before {
+                    background-image: url(../images/icons/icon-menu/icon-#{$i}.svg);
+                }
+
+                &:hover {
+                    &:before {
+                        background-image: url(../images/icons/icon-menu/icon-white-#{$i}.svg);
+                    }
+                }
+            }
+
+            &:hover {
+                >a {
+                    &:before {
+                        background-image: url(../images/icons/icon-menu/icon-#{$i}.svg);
+                    }
+                }
+            }
+        }
+    }
+}
+
+/** Menu icons */
+.list-main-cat {
+    >li {
+        position: relative;
+
+        >a {
+            position: relative;
+            padding-left: 40px;
+
+            &:hover {
+                background: $light;
+                color: $brand;
+            }
+
+            &:before {
+                content: "";
+                display: block;
+                width: 20px;
+                height: 20px;
+                position: absolute;
+                top: 50%;
+                margin-top: -10px;
+                border-radius: 3px;
+                left: 15px;
+                background-repeat: no-repeat;
+                background-size: 15px 15px;
+                background-position: center;
+            }
+        }
+    }
+}
