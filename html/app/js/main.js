@@ -68,11 +68,11 @@ var search_form = {
 var common_settings = {
   init: function () {
     $(window).bind('scroll', function () {
-      // if ($(window).scrollTop() > 150) {
-      //   $('.page-header').addClass('fixed');
-      // } else {
-      //   $('.page-header').removeClass('fixed');
-      // }
+      if ($(window).scrollTop() > 150) {
+        $('.page-header').addClass('fixed');
+      } else {
+        $('.page-header').removeClass('fixed');
+      }
     });
     $('.btn-back').click(function () {
       window.history.back();

@@ -1,6 +1,5 @@
 .slick-dots {
 	bottom: 5px;
-
 	li {
 		button {
 			background-color: $red;
@@ -139,6 +138,9 @@
 
 .featured-content {
 	padding: 15px 0;
+	@media(max-width:575px){
+		display: none;
+	}
 
 	.col-md-3 {
 		border-right: 1px dashed $border;
@@ -482,9 +484,12 @@
 	@media (max-width: 575px) {
 		padding-top: 15px;
 
-		.col-md-6:nth-child(1) {
+		.col-md-4:nth-child(1) {
 			margin-bottom: 15px;
 		}
+		 .col-md-4:last-child{
+			 display: none;
+		 }
 	}
 }
 
