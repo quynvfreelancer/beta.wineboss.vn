@@ -1,5 +1,4 @@
 .single-page-title {
-    font-family: $font_title;
     font-weight: 700;
     font-size: 28px;
     color: $dark;
@@ -46,7 +45,6 @@
     }
 
     .author-link {
-        font-family: $font_title;
         color: $brand;
         font-weight: 700;
         display: block;
@@ -165,7 +163,6 @@
     h4,
     h5,
     h6 {
-        font-family: $font_title;
         font-weight: 700;
     }
 
@@ -359,8 +356,7 @@
 }
 
 .entry .sticky-heading {
-    font-family: $font_title;
-    ;
+    
     font-weight: 700;
     color: #009af8;
     font-size: 16px;

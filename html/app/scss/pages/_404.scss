@@ -33,11 +33,10 @@
         color: $light;
         font-weight: bold;
         border-radius: 4px;
-        padding: 10px 15px;
+        padding: 8px 15px;
         margin: 0 auto;
-
         &:hover {
-            background-color: $brand;
+            background-color: $dark;
             color: $light;
         }
     }

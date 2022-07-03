@@ -46,7 +46,7 @@
     margin-bottom: 20px;
 
     .product-title {
-        font-family: $font_title;
+        
         font-weight: 700;
         font-size: 24px;
         color: $brand;
@@ -79,7 +79,7 @@
 
 .product-sku {
     font-size: 15px;
-    font-family: $font_title;
+    
 
     span {
         color: $red;
@@ -417,7 +417,7 @@
         }
 
         &-name {
-            font-family: $font_title;
+            
             text-transform: uppercase;
             font-weight: 700;
             font-size: 15px;
