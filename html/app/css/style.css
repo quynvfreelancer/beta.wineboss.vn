@@ -164,6 +164,8 @@ a:hover {
 
 @media (max-width: 575px) {
   .page-header .navbar-brand {
+    width: 100px;
+    height: 45px;
     background-image: url(../images/logo-light.svg);
   }
 }
@@ -273,6 +275,43 @@ a:hover {
   }
 }
 
+.btn-search-mobile {
+  color: #ffffff;
+  margin-left: auto;
+  display: none;
+}
+
+@media (max-width: 575px) {
+  .btn-search-mobile {
+    display: block;
+  }
+}
+
+.btn-search-mobile:focus, .btn-search-mobile:hover {
+  color: #ffffff;
+  outline: none;
+  box-shadow: none;
+}
+
+.search-form-mobile {
+  display: none;
+  position: absolute;
+  top: 5px;
+  width: 100%;
+  left: 0;
+  margin-bottom: 10px;
+}
+
+.search-form-mobile.show {
+  display: block;
+}
+
+.search-form-mobile .form-control {
+  width: 100%;
+  border-radius: 100px !important;
+  border: none;
+}
+
 .primary-nav {
   border-top: 1px solid #e1e8ee;
   background-color: #f1f1f1;
@@ -344,7 +383,7 @@ a:hover {
 
 .primary-nav .mega-menu .mega-menu-wrap {
   background: #ffffff;
-  margin-top: -9px;
+  margin-top: -12px;
   width: 100%;
   display: none;
   transition: all 0.3s;
