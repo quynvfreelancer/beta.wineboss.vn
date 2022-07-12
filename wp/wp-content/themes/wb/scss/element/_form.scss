@@ -1,0 +1,126 @@
+.cost-formular {
+    label {
+        font-weight: 700;
+    }
+
+    .custom-control-label {
+        font-weight: 400;
+        font-size: 14px;
+    }
+
+    .btn-process {
+        background-color: $brand_color;
+        color: $light_color;
+        width: 100%;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+}
+
+.test-drive-order,.order-car ,.order-product{
+    .form-heading {
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+    }
+
+    label {
+        font-weight: 700;
+    }
+    .custom-control-label{
+        font-weight: 400;
+        line-height: 1.8;
+    }
+
+    .form-text {
+        font-size: 11px;
+        color: #F59300;
+    }
+
+    .form-control,
+    .input-group-text {
+        font-size: 14px;
+
+        &:focus {
+            &::-webkit-input-placeholder {
+                color:transparent;
+            }
+
+            &:-ms-input-placeholder {
+                color:transparent;
+            }
+
+            &::placeholder {
+                color: transparent;
+            }
+        }
+    }
+
+    .input-group {
+
+        .form-control {
+            border-right: none;
+        }
+    }
+
+    .input-group-text {
+        background-color: $light_color;
+        border-left: none;
+        font-size: 12px;
+    }
+
+    .btn-submit {
+        color: $light_color;
+        text-transform: uppercase;
+        font-weight: 700;
+        background-color: $brand_color;
+        width: 100%;
+        font-size: 14px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+        &:hover {
+            background: $blue_color;
+        }
+    }
+
+    #date-trigger {
+        position: absolute;
+        right: 6px;
+        border: 0;
+        top: 30px;
+        bottom: 1px;
+        text-indent: -555px;
+        overflow: hidden;
+        width: 35px;
+        height: 35px;
+        font-size: 0;
+        background: #e6e6e6 url(../images/bg-calendar.png) no-repeat 50%;
+        background-size: 18px;
+        border-radius: 0;
+        cursor: pointer;
+    }
+}
+
+.valuation-product {
+    .form-row {
+        margin-bottom: 5px;
+    }
+
+    label {
+        font-weight: 700;
+    }
+
+    .form-control,
+    .custom-select {
+        font-size: 14px;
+    }
+
+    .btn-valuation {
+        background-color: $brand_color;
+        color: $light_color;
+        width: 100%;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+}

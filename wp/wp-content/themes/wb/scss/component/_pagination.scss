@@ -1,0 +1,38 @@
+.pagination-nav {
+    margin-bottom: 15px;
+    font-size: 12px;
+    .pagination {
+        margin: 0;
+
+        a,
+        span {
+            position: relative;
+            display: block;
+            padding: 0.5rem 0.75rem;
+            margin-left: -1px;
+            line-height: 1.25;
+            color: $second_text;
+            background-color: #fff;
+            border: 1px solid #dee2e6;
+            margin: 5px;
+            font-weight: bold;
+            border-radius: 100px;
+            transition: all 0.3s;
+        }
+
+        span {
+            color: $dark;
+        }
+
+        a {
+            background: #dee2e6;
+            color: $dark;
+
+            &:hover {
+                background: $brand;
+                color: #fff;
+                border-color: $brand;
+            }
+        }
+    }
+}

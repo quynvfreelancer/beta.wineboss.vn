@@ -1,0 +1,43 @@
+.error-404 {
+    padding-bottom: 30px;
+    @media(max-width:575px) {
+        padding-top: 50px;
+    }
+
+    img {
+        display: block;
+        margin: 0 auto;
+        max-width: 575px;
+
+        @media (max-width: 575px) {
+            max-width: 100%;
+        }
+    }
+
+    .page-title {
+        font-size: 16px;
+        text-align: center;
+        margin: 0;
+        color: $dark;
+        margin-bottom: 15px;
+
+        &:after {
+            display: none;
+        }
+    }
+
+    .go-to-home {
+        display: block;
+        width: 150px;
+        background-color: $brand;
+        color: $light;
+        font-weight: bold;
+        border-radius: 4px;
+        padding: 8px 15px;
+        margin: 0 auto;
+        &:hover {
+            background-color: $dark;
+            color: $light;
+        }
+    }
+}

@@ -1,0 +1,33 @@
+.breadcrumb {
+	margin-top: 15px;
+	background: none;
+	padding-left: 0;
+	padding-top: 0;
+	justify-content: flex-start;
+	color: $text;
+	margin-bottom: 10px;
+	border-bottom: 1px dashed $border;
+	border-radius: 0;
+	font-size: 13px;
+
+	a {
+		color: $text;
+
+		&:hover {
+			color: $brand;
+		}
+	}
+
+	.active {
+		color: $brand;
+	}
+}
+.breadcrumb > span > span > a{
+	color: $brand;
+}
+
+body.single {
+	.breadcrumb_last {
+		display: none;
+	}
+}

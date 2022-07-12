@@ -1,0 +1,15 @@
+image: php:latest
+
+pipelines:
+  tags:
+    '*':
+      - step:
+          name: Create zip file and upload to the server
+          deployment: production
+          script:
+            - apt-get update && apt-get install -y git
+            - name=$(basename -s .git $(git config --get remote.origin.url))
+            - echo "Creating .zip file..."
+            - git archive -o $name.zip --prefix=$name/ HEAD
+            - echo "Uploading file to the server..."
+            - scp $name.zip $SSH_USERNAME@$SERVER_IP:/var/www/metabox.io/downloads

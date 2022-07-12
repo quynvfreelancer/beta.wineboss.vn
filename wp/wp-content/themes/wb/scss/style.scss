@@ -1,0 +1,33 @@
+@import "variable/color";
+@import "variable/font";
+@import "_global";
+// Layout
+@import "layout/header";
+@import "layout/footer";
+@import "layout/sidebar";
+
+@import "component/alert";
+@import "component/breadcrumb";
+@import "component/list_main_cat";
+@import "component/product";
+@import "component/post";
+@import "component/comment";
+@import "component/review";
+@import "component/pagination";
+@import "component/social_link";
+@import "component/box_contact";
+
+@import "pages/homepage";
+@import "pages/404";
+@import "pages/page";
+@import "pages/product";
+@import "pages/single-product";
+@import "pages/single";
+@import "pages/thank";
+@import "pages/category";
+@import "pages/cart";
+@import "pages/checkout";
+@import "pages/contact";
+
+@import "layout/responsive";
+

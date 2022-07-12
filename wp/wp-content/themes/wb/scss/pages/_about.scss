@@ -1,0 +1,148 @@
+.home-about {
+    padding: 35px 0 0 0;
+
+    .s-title {
+        font-size: 28px;
+        color: $brand_color;
+        margin-bottom: 15px;
+    }
+
+    .sub-title {
+        text-transform: uppercase;
+        font-weight: 700;
+        color: $second_color;
+        margin-bottom: 0;
+        margin: 0;
+        text-align: left;
+
+        &:before {
+            content: '';
+            width: 20px;
+            height: 3px;
+            background-color: $brand_color;
+            position: relative;
+            display: inline-block;
+            margin-right: 5px;
+        }
+    }
+
+    .btn-readmore {
+        background-color: $second_color;
+        color: $light_color;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 14px;
+
+        &:hover {
+            color: $light_color;
+            background-color: $brand_color;
+        }
+    }
+}
+
+.about-description {
+    p {
+        line-height: 1.7;
+        font-size: 15px;
+        max-width: 85%;
+    }
+}
+
+@media(max-width:575px) {
+    .home-about {
+        position: relative;
+        padding-bottom: 150px;
+        padding-top: 15px;
+
+        .col-image {
+            position: absolute;
+            width: 250px;
+            right: 0;
+            bottom: -55px;
+        }
+    }
+
+    .about-description {
+        p {
+            max-width: 100%;
+        }
+    }
+
+}
+
+.about-contact {
+    padding: 65px 0 30px 0;
+    background-color: $brand_2;
+
+    .contact-inner {
+        background-color: $light_color;
+        padding: 30px;
+        max-width: 90%;
+        position: relative;
+        @media(max-width:575px){
+            margin-bottom: 50px;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .s-title {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        &::after {
+            display: block;
+            position: absolute;
+            right: -30px;
+            top: 30px;
+            content: "";
+            height: 100%;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            z-index: 0;
+        }
+    }
+
+    .col-form {
+        background: none;
+        color: $light_color;
+        padding-top: 0;
+        margin-bottom: 0;
+
+        .form-control {
+            border: none;
+            background: none;
+            border-radius: 0;
+            border-bottom: 1px solid rgba($color: $light_color, $alpha: 0.4);
+            color: $light_color;
+
+            &:focus {
+                box-shadow: none;
+                border-bottom-color: $light_color;
+            }
+        }
+
+        .btn-submit {
+            background: $light_color;
+            color: $brand_2;
+
+            &:hover {
+                background: $brand_color;
+                color: $light_color;
+            }
+        }
+    }
+}
+.featured-news{
+    .list-post-job{
+        .post-title{
+            font-size: 15px;
+        }
+        span{
+            margin-bottom: 10px;
+        }
+    }
+}
