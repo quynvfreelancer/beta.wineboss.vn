@@ -45,7 +45,7 @@ function wb_create_product_type() {
 	);
 	$args = array(
 		'label'                 => __( 'Sản phẩm', 'apc' ),
-		'description'           => __( 'Sản phẩm nhôm kính Hoàng Phi Glass', 'apc' ),
+		'description'           => __( 'Sản phẩm rươụ vang nhập khẩu chính hãng', 'apc' ),
 		'labels'                => $labels,
 		'supports'              => array( 'title', 'editor','author', 'thumbnail', 'comments', 'revisions' ),
 		'hierarchical'          => false,
@@ -112,4 +112,52 @@ if ( ! function_exists( 'wb_create_product_cat' ) ) {
 		register_taxonomy( 'product_cat', array( 'product' ), $args );
 	}
 	add_action( 'init', 'wb_create_product_cat', 0 );
+}
+// create product settings page
+add_filter( 'mb_settings_pages', 'wb_product_settings_pages' );
+function wb_product_settings_pages( $settings_pages ){
+	$settings_pages[] = array(
+		'id'            => 'product-options',
+		'option_name'   => 'product-options',
+		'menu_title'    => __( 'Cài đặt', 'wb' ),
+		'icon_url'      => 'dashicons-admin-generic',
+		'parent'      => 'edit.php?post_type=product',
+	);
+	return $settings_pages;
+}
+add_filter( 'rwmb_meta_boxes', 'wb_product_settings_meta_box' );
+function wb_product_settings_meta_box( $meta_boxes ) {	
+	$meta_boxes[] = array(
+		'title'          => 'Cấu hình thuộc tính',
+		'settings_pages' => 'product-options',
+		'fields' => array(			
+			array(
+				'name' => 'Xuất xứ',
+				'id'   => 'xuat_xu',
+				'type' => 'textarea',
+				'size' => 100
+			),
+			array(
+				'name' => 'Dung tích',
+				'id'   => 'dung_tich',
+				'type' => 'textarea',
+				'size' => 100
+			),
+			array(
+				'name' => 'Giống nho',
+				'id'   => 'giong_nho',
+				'type' => 'textarea',
+				'size' => 100
+			),
+			array(
+				'name' => 'Vùng làm vang',
+				'id'   => 'vung_lam_vang',
+				'type' => 'textarea',
+				'size' => 100
+			),
+		),
+	);
+	
+	
+	return $meta_boxes;
 }

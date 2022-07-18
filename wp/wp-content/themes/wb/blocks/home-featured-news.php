@@ -2,9 +2,9 @@
     <div class="container">
         <div class="s-header">
             <h2 class="s-title">
-                <a href="/song-khoe">Kiến thức sống khỏe</a>
+                <a href="/cam-nang-ruou-vang">Cẩm nang rượu vang</a>
             </h2>
-            <a href="/song-khoe" class="more-link">Xem thêm <i class="fa fa-angle-right" aria-hidden="true"></i> </a>
+            <a href="/cam-nang-ruou-vang" class="more-link">Xem thêm <i class="fa fa-angle-right" aria-hidden="true"></i> </a>
         </div>
 
         <div class="row">
@@ -20,7 +20,7 @@
                         array(
                             'taxonomy' => 'category',
                             'field' => 'slug',
-                            'terms' => 'song-khoe'
+                            'terms' => 'cam-nang-ruou-vang'
                         )
                     )
                 );
@@ -87,7 +87,7 @@
                         array(
                             'taxonomy' => 'category',
                             'field' => 'slug',
-                            'terms' => 'song-khoe'
+                            'terms' => 'cam-nang-ruou-vang'
                         )
                     )
                 );

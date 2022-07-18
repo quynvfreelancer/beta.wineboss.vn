@@ -10,6 +10,6 @@
 <?php get_template_part( 'blocks/home','middle-banner');?>
 <?php get_template_part( 'blocks/home','product');?>
 <?php get_template_part( 'blocks/home','featured-news');?>
+<?php get_template_part( 'blocks/home','partner');?>
 <?php get_template_part( 'blocks/home','key-brand');?>
-
 <?php get_footer(); ?>

@@ -75,7 +75,7 @@ class Widget_Product extends WP_Widget {
 							'container_id'    => '',
 							'container_class' => '',
 							'menu_id'         => false,
-							'menu_class'      => 'child-cat',
+							'menu_class'      => 'child-cat product-child-cat',
 							'depth'           => 1,
 
 						)

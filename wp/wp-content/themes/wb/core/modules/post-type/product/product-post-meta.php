@@ -1,42 +1,61 @@
 <?php
+$dung_tich_str ='1,5L, 1000mL, 1050mL, 1700mL, 200ml, 375ml, 3L, 445mL, 500ml, 5L, 620ML, 6L, 750ml, 860mL, 970mL';
+$dung_tich = explode(', ', $dung_tich_str);
+//var_dump($dung_tich);
 add_filter( 'rwmb_meta_boxes', 'wb_product_meta_box' );
 function wb_product_meta_box( $meta_boxes ) {
 	$meta_boxes[] = array(
-		'title'   => 'Thông tin sản phẩm',
+		'title'   => 'Tuỳ chọn sản phẩm',
 		'post_types' => 'product',
+		'context'	=> 'side',
 		'fields' => array(
 			array(
+				'name' => 'Sản phẩm nổi bật',
+				'id'   => 'featured_product',
+				'type'      => 'switch',
+				'style'     => 'rounded',
+				'on_label'  => 'Yes',
+				'off_label' => 'No',
+			),
+		),
+	);
+	$meta_boxes[] = array(
+		'title'   => 'Thông tin chung',
+		'post_types' => 'product',
+		'context'	=> 'advanced',
+		'tabs'      => array(
+			'product-general' => array(
+				'label' => 'Thông tin sản phẩm',
+				'icon'  => 'dashicons-media-text', 
+			),
+			'product-attribute'  => array(
+				'label' => 'Thuộc tính sản phẩm',
+				'icon'  => 'dashicons-share-alt', 
+			),
+		),
+		'tab_style' => 'default',
+		'tab_wrapper' => true,
+		'fields' => array(
+			array(
+				'tab'  => 'product-general',
 				'name' => 'Tên rút gọn (nếu có)',
 				'id'   => 'product_short_name',
 				'type' => 'text',
 				'size'=> 50
-			),
+			),			
 			array(
-				'name' => 'Sản phẩm nổi bật',
-				'id'   => 'featured_product',
-				'type' => 'checkbox',
-			),
-			array(
-				'name' => 'Sản phẩm mới',
-				'id'   => 'new_product',
-				'type' => 'checkbox',
-			),
-			array(
-				'name' => 'Sản phẩm khuyến mãi',
-				'id'   => 'sale_product',
-				'type' => 'checkbox',
-			),
-			array(
+				'tab'  => 'product-general',
 				'type' => 'divider',
 			),
-
 			array(
+				'tab'  => 'product-general',
 				'name' => 'Mã sản phẩm',
 				'id'   => 'product_sku',
 				'required' => true,  
 				'type' => 'text',
 			),			
 			array(
+				'tab'  => 'product-general',
 				'name' => 'Mô tả ngắn',
 				'id'   => 'product_desc',
 				'type' => 'wysiwyg',
@@ -46,26 +65,29 @@ function wb_product_meta_box( $meta_boxes ) {
 				),
 			),
 			array(
+				'tab'  => 'product-general',
 				'type' => 'divider',
 			),
 			array(
+				'tab'  => 'product-general',
 				'name' => 'Giá',
-				'id'   => 'product_normal_price',
+				'id'   => '_regular_price',
 				'type' => 'number',
 				'required' => true,  
 			),		
 			array(
+				'tab'  => 'product-general',
 				'name' => 'Giá khuyến mãi',
-				'id'   => 'product_sale_price',
+				'id'   => '_sale_price',
 				'type' => 'number',
 			),
 			
-
-			
 			array(
+				'tab'  => 'product-general',
 				'type' => 'divider',
 			),			
 			array(
+				'tab'  => 'product-general',
 				'id'               => 'product_image',
 				'name'             => 'Ảnh sản phẩm',
 				'type'             => 'image_advanced',
@@ -74,6 +96,56 @@ function wb_product_meta_box( $meta_boxes ) {
 				'max_status'       => 'false',
 				'image_size'       => 'thumbnail',
 				'required' 		   => true,  
+			),
+			array(
+				'tab'  => 'product-attribute',
+				'name' => 'Xuất xứ',
+				'id'   => 'xuat_xu',
+				'type' => 'select_advanced',
+				'options'     => [
+					'Ý'       => 'Ý',
+					'Pháp' => 'Pháp',
+					'Chile'   => 'Chile',
+					'Canada'  => 'Canada',
+					'Mỹ'      => 'Mỹ',
+					'Tây Ban Nha'  => 'Tây Ban Nha',
+					'Úc'      => 'Úc',
+					'Newzeland'      => 'Newzeland',
+					'Argentina'      => 'Argentina',
+					'Bồ Đào Nha'      => 'Bồ Đào Nha',
+					'Áo'      => 'Áo',
+					'Đức'      => 'Đức',
+				],
+				'placeholder' => 'Chọn quốc gia',
+			),	
+			array(
+				'tab'  => 'product-attribute',
+				'name' => 'Dung tích',
+				'id'   => 'dung_tich',
+				'type' => 'text',
+
+			),
+			array(
+				'tab'  => 'product-attribute',
+				'name' => 'Nồng độ',
+				'id'   => 'nong_do',
+				'type' => 'text',
+			),	
+			array(
+				'tab'  => 'product-attribute',
+				'name' => 'Vùng làm vang',
+				'id'   => 'vung_lam_vang',
+				'type' => 'text',
+			),	
+			array(
+				'tab'  => 'product-attribute',
+				'name' => 'Giống nho',
+				'id'   => 'giong_nho',
+				'type' => 'text',
+			),
+			array(
+				'tab'  => 'product-attribute',
+				'type' => 'divider',
 			),
 		),
 	);

@@ -15,8 +15,10 @@
 
 	</div>
 	<div class="ml-auto col-md-6">
-		<?php 
-		echo kk_star_ratings(); 
+		<?php
+		if(function_exists('kk_star_ratings')):
+			echo kk_star_ratings(); 
+		endif;
 		?>
 	</div>
 </div>

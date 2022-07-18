@@ -13,6 +13,7 @@ define( 'MBAIO_URL', get_template_directory_uri() . '/core/extensions/meta-box/'
 require_once MBAIO_DIR . 'meta-box.php';
 require_once MBAIO_DIR . 'extensions/mb-settings-page/mb-settings-page.php';
 require_once MBAIO_DIR . 'extensions/meta-box-group/meta-box-group.php';
+require_once MBAIO_DIR . 'extensions/meta-box-tabs/meta-box-tabs.php';
 require_once MBAIO_DIR . 'extensions/meta-box-include-exclude/meta-box-include-exclude.php';
 
 /**
@@ -27,7 +28,7 @@ require_once dirname(__FILE__).  '/modules/comment/init.php';
 require_once dirname(__FILE__).  '/modules/theme-options/init.php';
 require_once dirname(__FILE__).  '/modules/widget/init.php';
 require_once dirname(__FILE__).  '/modules/shopping-cart/init.php';
-require_once dirname(__FILE__).  '/modules/product-sort/init.php';
+//require_once dirname(__FILE__).  '/modules/product-sort/init.php';
 /**
 * Theme Init after setup
 */

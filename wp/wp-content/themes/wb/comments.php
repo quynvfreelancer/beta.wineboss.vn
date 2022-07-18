@@ -1,77 +1,85 @@
 <?php
 /**
- * The template for displaying comments
- *
- * This is the template that displays the area of the page that contains both the current comments
- * and the comment form.
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package wineboss
- */
+* The template for displaying comments.
+*
+* The area of the page that contains both current comments
+* and the comment form.
+*
+* @package _mbbasetheme
+*/
 
 /*
- * If the current post is protected by a password and
- * the visitor has not yet entered the password we will
- * return early without loading the comments.
- */
+* If the current post is protected by a password and
+* the visitor has not yet entered the password we will
+* return early without loading the comments.
+*/
 if ( post_password_required() ) {
 	return;
 }
 ?>
-
-<div id="comments" class="comments-area">
-
-	<?php
-	// You can start editing here -- including this comment!
-	if ( have_comments() ) :
+<div id="comments" class="comments-area clearfix  ">
+	<?php if ( have_comments() ) : ?>
+		<?php 
+		$current_post_id = get_the_ID();
+		$comment_number  = get_comments_number( $current_post_id);
 		?>
-		<h2 class="comments-title">
-			<?php
-			$wb_comment_count = get_comments_number();
-			if ( '1' === $wb_comment_count ) {
-				printf(
-					/* translators: 1: title. */
-					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'wb' ),
-					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
-				);
-			} else {
-				printf( 
-					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $wb_comment_count, 'comments title', 'wb' ) ),
-					number_format_i18n( $wb_comment_count ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
-				);
-			}
-			?>
-		</h2><!-- .comments-title -->
-
-		<?php the_comments_navigation(); ?>
-
+		<h3 class="comment-section-title">Bình luận (<span style="color:#00af91;"><?php echo $comment_number; ?></span>)</h3>
 		<ol class="comment-list">
 			<?php
-			wp_list_comments(
-				array(
-					'style'      => 'ol',
-					'short_ping' => true,
-				)
-			);
+			wp_list_comments( array(
+				'type'=>'comment',
+				'style'      => 'ol',
+				'short_ping' => true,
+				'reply_text' =>'Trả lời',
+				'callback' => 'wb_theme_comment',
+				'avatar_size' =>50
+			) );
 			?>
 		</ol><!-- .comment-list -->
 
-		<?php
-		the_comments_navigation();
+		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
+		<nav id="comment-nav-below" class="comment-navigation" role="navigation">
+			<h4 class="screen-reader-text"><?php _e( 'Xem thêm bình luận', '_mbbasetheme' ); ?></h4>
+			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Bình luận cũ hơn', '_mbbasetheme' ) ); ?></div>
+			<div class="nav-next"><?php next_comments_link( __( 'Bình luận mới nhất &rarr;', '_mbbasetheme' ) ); ?></div>
+		</nav>
+	<?php endif;  ?>
+	<?php else: ?>
+		<p class="response-none">Trở thành người đầu tiên bình luận cho bài viết này!</p>
+	<?php endif;  ?>
 
-		// If comments are closed and there are comments, let's leave a little note, shall we?
-		if ( ! comments_open() ) :
-			?>
-			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'wb' ); ?></p>
-			<?php
-		endif;
+	<?php
 
-	endif; // Check for have_comments().
+	if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
+		?>
+	<p class="no-comments"><?php _e( 'Comments are closed.', '_mbbasetheme' ); ?></p>
+<?php endif; ?>
+<?php
+$str ='<div class="w-100">';
+$str .='<p class="comment-form-comment">';
+$str .='<label for="comment">Nội dung bình luận</label><textarea class="form-control" id="comment" name="comment" placeholder="Nội dung bình luận"  rows="5" aria-required="true"></textarea>';
+$str .='</p></div>';
+$args = array(
+	'fields' => apply_filters(
+		'comment_form_default_fields', array(
+			'author' =>'<div class="comment-form-author ">' . '<input class="form-control" id="author" placeholder=" Họ tên" name="author" type="text" value="' .
+			esc_attr( $commenter['comment_author'] ) . '" size="30" />'.
+			'</div>'
+			,
+			'email'  => '<div class="comment-form-email ">' . '<input class="form-control" id="email" placeholder="Email của bạn" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
+			'" size="30" />'  .
+			'</div>',
+			
+		)
+	),
+	'comment_field' => $str,
+	'comment_notes_after' => '',
+	'title_reply' => '',
+	'label_submit' => 'Gửi bình luận',
+	'title_reply_to'    => __( 'Trả lời %s' ),
+	'cancel_reply_link' => __( 'Hủy trả lời' ),
+);
 
-	comment_form();
-	?>
-
+comment_form($args);
+?>
 </div><!-- #comments -->
