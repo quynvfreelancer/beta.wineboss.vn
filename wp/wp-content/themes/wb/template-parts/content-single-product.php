@@ -4,23 +4,34 @@
 			<?php the_post_thumbnail('full');?>
 			<div class="product-attr row">
 				<ul class="col-md-6 list-attr">
-					<li>
-						<span class="label">Xuất xứ</span> <span class="value">Vang <?php echo rwmb_meta( 'xuat_xu');  ?></span>
-					</li>
-					<li>
-						<span class="label">Dung tích</span> <span class="value"><?php echo rwmb_meta( 'dung_tich');  ?></span>
-					</li>
-					<li>
-						<span class="label">Nồng độ</span> <span class="value"> <?php echo rwmb_meta( 'nong_do');  ?></span>
-					</li>
+					<?php if(rwmb_meta( 'xuat_xu') !=''): ?>
+						<li>
+							<span class="label">Xuất xứ</span> <span class="value">Vang <?php echo rwmb_meta( 'xuat_xu');  ?></span>
+						</li>
+					<?php endif; ?>
+					<?php if(rwmb_meta( 'dung_tich') !=''): ?>
+						<li>
+							<span class="label">Dung tích</span> <span class="value"><?php echo rwmb_meta( 'dung_tich');  ?></span>
+						</li>
+					<?php endif; ?>
+					<?php if(rwmb_meta( 'nong_do') !=''): ?>
+						<li>
+							<span class="label">Nồng độ</span> <span class="value"> <?php echo rwmb_meta( 'nong_do');  ?></span>
+						</li>
+					<?php endif; ?>
+					
 				</ul>
 				<ul class="col-md-6  list-attr">
-					<li>
-						<span class="label">Vùng làm vang</span> <span class="value"><?php echo rwmb_meta( 'vung_lam_vang');  ?></span>
-					</li>
-					<li>
-						<span class="label">Giống nho</span> <span class="value"><?php echo rwmb_meta( 'giong_nho');  ?></span>
-					</li>
+					<?php if(rwmb_meta( 'vung_lam_vang') !=''): ?>
+						<li>
+							<span class="label">Vùng làm vang</span> <span class="value"><?php echo rwmb_meta( 'vung_lam_vang');  ?></span>
+						</li>
+					<?php endif; ?>
+					<?php if(rwmb_meta( 'giong_nho') !=''): ?>
+						<li>
+							<span class="label">Giống nho</span> <span class="value"><?php echo rwmb_meta( 'giong_nho');  ?></span>
+						</li>
+					<?php endif; ?>
 				</ul>
 			</div>
 

@@ -14,7 +14,7 @@ get_header();
 	<div class="container">
 		<section class="error-404">
 			<div class="container">
-				<img src="<?php echo THEME_URI;?>/images/404.png" alt="">
+				<img src="<?php echo THEME_URI;?>/images/404.jpeg" alt="Lỗi 404">
 				<h1 class="page-title">Lỗi 404! Không tìm thấy trang bạn yêu cầu</h1>
 				<a href="/" class="btn go-to-home">
 					Về trang chủ <i class="fa fa-angle-right"

@@ -240,16 +240,14 @@ class Widget_Mega_Menu extends WP_Widget {
 			$item_targets = array_reverse($item_targets);
 		}
 
-		echo '<div class="col-md-2 col-6"><div class="widget">';
-		echo ' <div class="widget-title"><a href="'.$parent_link.'">'.$title.'</a></div>';
-		echo '<div class="widget-content">';
-		echo"<ul class=''>";
+		echo '<div class="col widget-list-cat">';
+		echo '<div class="widget-title"><a href="'.$parent_link.'">'.$title.'</a></div>';
+		echo '<div class="widget-content  d-flex flex-wrap">';
+		echo"<ul class='nav'>";
 		
 		?>
 		<?php
-
 		foreach ($items as $num => $item) : 
-
 			if (!empty($item)) :
 				if (empty($item_links[$num])) :
 					echo("<li class='" . $item_classes[$num] . "'>" . $item . "</li>");
@@ -264,7 +262,7 @@ class Widget_Mega_Menu extends WP_Widget {
 		endforeach;
 		echo("</ul>");
 		echo '</div>';
-		echo '</div></div>';
+		echo '</div>';
 	}
 
 	public function update( $new_instance, $old_instance) {

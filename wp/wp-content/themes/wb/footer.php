@@ -30,20 +30,21 @@
                         Về chúng tôi
                     </div>
                     <div class="widget-content">
-                        <ul class="footer-menu">
-                            <li>
-                                <a href="#">Giới thiệu</a>
-                            </li>
-                            <li>
-                                <a href="#">Đối tác</a>
-                            </li>
-                            <li>
-                                <a href="#">Tuyển dụng</a>
-                            </li>
-                            <li>
-                                <a href="#">Liên hệ hợp tác</a>
-                            </li>
-                        </ul>
+                        <?php
+                        if(has_nav_menu('menu-footer-1')){
+                            wp_nav_menu( array(
+                                'menu'              => 'menu-footer-1',
+                                'theme_location'    => 'menu-footer-1',
+                                'depth'             => 1,
+                                'container'         => '',
+                                'container_id'      => '',
+                                'container_class'   => '',
+                                'container_id'      => '',
+                                'menu_id'           => false,
+                                'menu_class'        => 'footer-menu',
+                            ));
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
@@ -53,28 +54,21 @@
                         Hỗ trợ khách hàng
                     </div>
                     <div class="widget-content">
-                        <ul class="footer-menu">
-                            <li>
-                                <a href="#">
-                                    Hướng dẫn thanh toán
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Câu hỏi thường gặp
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Hệ thống cửa hàng
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Tư vấn
-                                </a>
-                            </li>
-                        </ul>
+                        <?php
+                        if(has_nav_menu('menu-footer-2')){
+                            wp_nav_menu( array(
+                                'menu'              => 'menu-footer-2',
+                                'theme_location'    => 'menu-footer-2',
+                                'depth'             => 1,
+                                'container'         => '',
+                                'container_id'      => '',
+                                'container_class'   => '',
+                                'container_id'      => '',
+                                'menu_id'           => false,
+                                'menu_class'        => 'footer-menu',
+                            ));
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
@@ -84,21 +78,21 @@
                         Chính sách
                     </div>
                     <div class="widget-content">
-                        <ul class="footer-menu">
-
-                            <li>
-                                <a href="#">Chính sách bảo mật</a>
-                            </li>
-                            <li>
-                                <a href="#">Chính sách quảng cáo</a>
-                            </li>
-                            <li>
-                                <a href="#">Chính sách bảo hành</a>
-                            </li>
-                            <li>
-                                <a href="#">Chính sách vận chuyển</a>
-                            </li>
-                        </ul>
+                        <?php
+                        if(has_nav_menu('menu-footer-3')){
+                            wp_nav_menu( array(
+                                'menu'              => 'menu-footer-3',
+                                'theme_location'    => 'menu-footer-3',
+                                'depth'             => 1,
+                                'container'         => '',
+                                'container_id'      => '',
+                                'container_class'   => '',
+                                'container_id'      => '',
+                                'menu_id'           => false,
+                                'menu_class'        => 'footer-menu',
+                            ));
+                        }
+                        ?>
                     </div>
                 </div>
             </div>

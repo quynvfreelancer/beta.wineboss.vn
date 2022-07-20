@@ -52,7 +52,6 @@ class BootstrapNavMenuWalker extends Walker_Nav_Menu
         if ($depth > 0) {
             $attributes .=' class="dropdown-item" ';
         }
-
         $item_output = $args->before;
         $item_output .= '<a'. $attributes .'>';
         $item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
@@ -62,13 +61,13 @@ class BootstrapNavMenuWalker extends Walker_Nav_Menu
         $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
 
         if ($hasMegaMenu) {
-            $output .= "<ul id=\"mega-menu-{$item->ID}\" class=\"mega-menu-wrap dropdown-menu depth_".$depth."\">";
+            $output .= "<div id=\"mega-menu-{$item->ID}\" class=\"mega-menu-wrap dropdown-menu depth_".$depth."\"><div class='inner'>";
             ob_start();
             dynamic_sidebar( 'mega-menu-item-' . $item->ID );
             $dynamicSidebar = ob_get_contents();
             ob_end_clean();
             $output .=  $dynamicSidebar;
-            $output .= "</ul>";
+            $output .= "</div></div>";
         }
     }
 
