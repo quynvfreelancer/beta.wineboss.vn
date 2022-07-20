@@ -156,8 +156,6 @@ function wb_product_settings_meta_box( $meta_boxes ) {
 				'size' => 100
 			),
 		),
-	);
-	
-	
+	);	
 	return $meta_boxes;
 }

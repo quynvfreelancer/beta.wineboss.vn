@@ -177,7 +177,7 @@
     <div class="list-method">
         <a href="#" class="item">
             <span class="icon">
-                <img src="images/chat.svg" alt="Chat zalo">
+                <img src="<?php echo THEME_URI;?>/images/chat.svg" alt="Chat zalo">
             </span>
             <span class="text">
                 Zalo Chat
@@ -185,7 +185,7 @@
         </a>
         <a href="#" class="item">
             <span class="icon">
-                <img src="images/messenger.svg" alt="Chat Messenger">
+                <img src="<?php echo THEME_URI;?>/images/messenger.svg" alt="Chat Messenger">
             </span>
             <span class="text">
                 Messenger
@@ -193,7 +193,7 @@
         </a>
         <a href="#" class="item">
             <span class="icon">
-                <img src="images/email.svg" alt="Email">
+                <img src="<?php echo THEME_URI;?>/images/email.svg" alt="Email">
             </span>
             <span class="text">
                 Gửi Email

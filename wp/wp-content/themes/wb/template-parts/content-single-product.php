@@ -1,28 +1,31 @@
-<div class="single-product-info mt-3">
+<div class="single-product-info mt-0 mt-md-3">
 	<div class="row">
-		<div class="col-md-5 single-gallery">
-			<?php 
-			$images = rwmb_meta( 'product_image', array( 'size' => 'full' ) );
-			if(!empty($images)):
-				echo '<div class="list-gallery-large">';
-				foreach ( $images as $image ) {
-					echo '<div class="slide-image"><img src="', $image['url'], '"></div>';
-				}
-				echo '</div>';
-			endif;
-			?>
-			<?php 
-			$images_thumb = rwmb_meta( 'product_image', array( 'size' => 'thumbnail' ) );
-			if(!empty($images_thumb)):
-				echo '<div class="list-gallery-thumb">';
-				foreach ( $images_thumb as $image_thumb ) {
-					echo '<div class="slide-image"><img src="', $image_thumb['url'], '"></div>';
-				}
-				echo '</div>';
-			endif;
-			?>
+		<div class="col-md-4 single-gallery">
+			<?php the_post_thumbnail('full');?>
+			<div class="product-attr row">
+				<ul class="col-md-6 list-attr">
+					<li>
+						<span class="label">Xuất xứ</span> <span class="value">Vang <?php echo rwmb_meta( 'xuat_xu');  ?></span>
+					</li>
+					<li>
+						<span class="label">Dung tích</span> <span class="value"><?php echo rwmb_meta( 'dung_tich');  ?></span>
+					</li>
+					<li>
+						<span class="label">Nồng độ</span> <span class="value"> <?php echo rwmb_meta( 'nong_do');  ?></span>
+					</li>
+				</ul>
+				<ul class="col-md-6  list-attr">
+					<li>
+						<span class="label">Vùng làm vang</span> <span class="value"><?php echo rwmb_meta( 'vung_lam_vang');  ?></span>
+					</li>
+					<li>
+						<span class="label">Giống nho</span> <span class="value"><?php echo rwmb_meta( 'giong_nho');  ?></span>
+					</li>
+				</ul>
+			</div>
+
 		</div>
-		<div class="col-md-7 single-info-detail">
+		<div class="col-md-8 single-info-detail">
 			<h1 class="product-title">
 				<?php the_title(); ?>
 			</h1>
@@ -30,18 +33,8 @@
 				<strong>Mã SP: <span><?php echo rwmb_meta( 'product_sku');  ?></span></strong>
 			</div>
 			<div class="row mr-0 ml-0">
-				<div class="col-md-7">
-					<div class="d-flex post-meta row">
+				<div class="col-md-6">
 
-						<div class="star-rating col-6">
-							<?php
-							if(function_exists('kk_star_ratings')){
-								echo kk_star_ratings();
-							}
-							?>
-						</div>
-
-					</div>
 					<div class="row mt-2">
 						<div class="col-md-6 pl-0">
 							<?php 
@@ -58,133 +51,105 @@
 							?>
 							<span class="product-price">
 								<?php if(isset($product_price) && is_numeric($product_price)): ?>
-								Giá: <?php echo number_format($product_price); ?> <sup>đ</sup>
-							<?php endif; ?>
-						</span>
-						<span class="product-brand d-none">
-							Thương hiệu: <a href="#" class="brand-name">OmRON</a>
-						</span>
-					</div>
-					<div class="col-md-6 pl-0">
-						<div class="product-stock">
-							Tình trạng: <span class="status">Còn hàng</span>
+								Giá: <?php echo number_format($product_price); ?> <sup>đ</sup><?php endif; ?>
+							</span>
+
 						</div>
-					</div>
-					<div class="row mt-2">
-						<div class="product-desc col-12 entry">
+						<div class="col-md-6 pl-0">
+							<div class="product-stock">
+								Tình trạng: <span class="status instock">Còn hàng</span>
+							</div>
+						</div>						
+						<div class="product-desc  entry mt-2 mb-2">
 							<?php echo rwmb_meta( 'product_desc');  ?>
 						</div>
+
 					</div>
+					<div class="row">
+						<div class="col-md-12 product-cart">
+							<form action="" method="post" class="add-to-cart">
+								<input type="hidden" name="product_id" value="<?php echo $product_id;?>">
+								<input type="hidden" name="product_price" value="<?php echo $product_price; ?>">
+								<input type="hidden" name="add-to-cart" value="add-to-cart">
+								<div class="quantity">
+									<span class="minus">-</span>
+									<input type="number" id="quantity_6232186014191"
+									class="input-text qty text input-number form-control" step="1"
+									min="1" max="" name="quantity" value="1" title="SL" size="4"
+									placeholder="" inputmode="numeric" />
+									<span class="plus">+</span>
+								</div>
+								<button type="submit" class="btn btn-add-to-cart">
+									+ Thêm vào giỏ
+								</button>
+							</form>
+						</div>
+					</div>
+					<div class="choose">
+						<span>hoặc</span>
+					</div>
+					<form action="" class="call-me form-inline">
+						<div class="form-title">
+							Để lại số điện thoại để được tư vấn
+						</div>
+						<div class="form-group">
+							<input type="text" name="numberphone" class="form-control"
+							placeholder="Nhập số điện thoại">
+							<input type="hidden" name="product" value="sản phẩm a">
+							<button class="btn btn-call-me" type="submit">Gửi</button>
+						</div>
+					</form>
 				</div>
-				<div class="row">
-					<div class="col-md-12 product-cart">
-						<form action="" method="post" class="add-to-cart">
-							<input type="hidden" name="product_id" value="<?php echo $product_id;?>">
-							<input type="hidden" name="product_price" value="<?php echo $product_price; ?>">
-							<input type="hidden" name="add-to-cart" value="add-to-cart">
-							<span class="quantity form-group">
-								<input type="button" value="+" class="plus">
-								<i class="fa fa-angle-up" aria-hidden="true"></i>
-								<input type="number" step="1" min="0" name="product_quantity" value="1"
-								title="Qty" id="product_quantity" class="form-control ">
-								<input type="button" value="-" class="minus">
-								<i class="fa fa-angle-down" aria-hidden="true"></i>
+				<div class="col-md-6 pr-0 product-benefit">
+					<ul class="description-feature">
+						<li class="freeship">
+							<span class="icon"></span>
+							Cam kết hàng chính hãng 100%
+						</li>
+						<li>
+							<span class="icon"></span>
+							Chất lượng uy tín, đảm bảo
+						</li>
+						<li>
+							<span class="icon">
+
 							</span>
-							<button type="submit" class="btn btn-add-to-cart">
-								+ Thêm vào giỏ
-							</button>
-						</form>
+							Chính sách đổi trả hàng rõ ràng
+						</li>
+						<li>
+							<span class="icon"></span>
+							Giao hàng trên toàn quốc
+						</li>
+						<li>
+							<span class="icon"></span>
+							Thanh toán khi nhận hàng
+						</li>
+						<li>
+							<span class="icon"></span>
+							Ưu đãi quà tặng và khuyến mãi
+						</li>
+					</ul>
+					<div class="flash-sale-info">
+						<a href="#">
+							<img src="<?php echo THEME_URI;?>/images/banner/1.jpeg" alt="">
+						</a>
 					</div>
-				</div>
-				<div class="choose">
-					<span>hoặc</span>
-				</div>
-				<form action="" class="call-me form-inline">
-					<div class="form-title">
-						Để lại số điện thoại để được tư vấn
-					</div>
-					<div class="form-group">
-						<input type="text" name="numberphone" class="form-control"
-						placeholder="Nhập số điện thoại">
-						<input type="hidden" name="product" value="sản phẩm a">
-						<button class="btn btn-call-me" type="submit">Gửi</button>
-					</div>
-				</form>
-			</div>
-			<div class="col-md-5 pr-0 product-benefit">
-				<ul class="description-feature">
-					<li class="freeship">
-						<span class="icon"></span>
-						Hàng chính hãng 100%
-					</li>
-					<li>
-						<span class="icon"></span>
-						Uy tín chất lượng
-					</li>
-					<li>
-						<span class="icon">
-
-						</span>
-						Hỗ trợ liên tục trong quá trình sd
-					</li>
-					<li>
-						<span class="icon"></span>
-						Chính sách đổi trả hàng rõ ràng
-					</li>
-					<li>
-						<span class="icon"></span>
-						Giao hàng trên toàn quốc
-					</li>
-					<li>
-						<span class="icon"></span>
-						Thanh toán tại nhà hoặc qua thẻ
-					</li>
-					<li>
-						<span class="icon"></span>
-						Quà tặng và khuyến mãi
-					</li>
-
-				</ul>
-
-				<div class="flash-sale-info">
-					<a href="#">
-						<img src="images/banner/1.jpeg" alt="">
-					</a>
 				</div>
 			</div>
 		</div>
-		<!--End row-->
 	</div>
-</div>
 </div>
 
 <div class="row page-container">
 	<div class="col-md-8 order-1 order-md-1">
-
 		<!--Post content-->
-		<div class="entry">
-			<h2 class="entry-title">Thông tin sản phẩm</h2>
+		<div class="entry">			
 			<?php the_content(); ?>
 		</div>
-
 		<!---End entry--->
 		<?php
 		get_template_part('template-parts/content','social-share');
 		?>
-		<div class="post-tag-container">
-			<div class="tag-s-title">Từ khóa</div>
-			<ul class="post-tag">
-				<li>
-					<a href="#">#Thiết bị y tế</a>
-				</li>
-				<li>
-					<a href="#">#Sức khỏe</a>
-				</li>
-				<li>
-					<a href="#">#Dụng cụ y tế</a>
-				</li>
-			</ul>
-		</div>
 		<!---Comment box-->
 		<?php
 		if ( comments_open() || get_comments_number() ) :
@@ -224,12 +189,12 @@
 					$list_product = new WP_Query($agrs_product);
 					if ($list_product->have_posts()):
 						while ($list_product->have_posts()):$list_product->the_post();
-							get_template_part( 'template-parts/content', 'product' );
+							get_template_part( 'template-parts/content', 'product-related' );
 						endwhile;
 						wp_reset_postdata();
 					endif; 
 					?>
-					
+
 				</div>
 			</div>
 		</div>

@@ -1,7 +1,11 @@
 <?php
-$dung_tich_str ='1,5L, 1000mL, 1050mL, 1700mL, 200ml, 375ml, 3L, 445mL, 500ml, 5L, 620ML, 6L, 750ml, 860mL, 970mL';
-$dung_tich = explode(', ', $dung_tich_str);
-//var_dump($dung_tich);
+$settings = get_option( 'product-options' );
+if ( isset( $settings['vung_lam_vang'] ) ) {
+	$vung_lam_vang_str =  $settings['vung_lam_vang'];
+}
+$vung_lam_vang = explode(', ', $vung_lam_vang_str);
+
+
 add_filter( 'rwmb_meta_boxes', 'wb_product_meta_box' );
 function wb_product_meta_box( $meta_boxes ) {
 	$meta_boxes[] = array(
@@ -16,6 +20,15 @@ function wb_product_meta_box( $meta_boxes ) {
 				'style'     => 'rounded',
 				'on_label'  => 'Yes',
 				'off_label' => 'No',
+			),
+			array(
+				'name' => 'Còn hàng',
+				'id'   => '_in_stock',
+				'type'      => 'switch',
+				'style'     => 'rounded',
+				'on_label'  => 'Yes',
+				'off_label' => 'No',
+				'std'		=> 1
 			),
 		),
 	);
