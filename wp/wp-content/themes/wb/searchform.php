@@ -1,4 +1,4 @@
-<form action="<?php echo get_home_url();?>" class="search-form">
+<form action="<?php echo get_home_url();?>" class="search-form form-inline">
 	<div class="form-group">
 		<input style="border:1px solid #d5d5d5;" type="text" name="s" placeholder="Tìm kiếm " class="form-control">
 		<button style="background: #d46518; color: #fff;" type="submit" class="btn btn-search">

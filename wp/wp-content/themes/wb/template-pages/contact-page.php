@@ -12,11 +12,11 @@
 		</h1>
 		<div class="contact-info row">
 			<div class="col-md-4 col-border">
-				<p>Hợp tác <a href="mailto:contact@thietbiyteanphat.com"><i class="fa fa-envelope"
-					aria-hidden="true"></i>contact@thietbiyteanphat.com</a></p>
-					<p>Hành chính <a href="tel:0123456789">
+				<p>Hợp tác <a href="mailto:wineboss.jsc@gmail.com"><i class="fa fa-envelope"
+					aria-hidden="true"></i>wineboss.jsc@gmail.com</a></p>
+					<p>Hành chính <a href="tel:0978966891">
 						<i class="fa fa-phone" aria-hidden="true"></i>
-						(024) 123 223
+						0978 966 891
 					</a>
 				</p>
 			</div>
@@ -27,7 +27,7 @@
 				</p>
 				<p>
 					<i class="fa fa-map-marker" aria-hidden="true"></i>
-					Tòa nhà Landmark 82 KeangNam - Phạm Hùng - Nam Từ Liêm - Hà Nội
+					102 Thượng Đình - Thanh Xuân - Hà Nội
 				</p>
 			</div>
 		</div>

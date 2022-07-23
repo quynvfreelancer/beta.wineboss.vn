@@ -1,35 +1,19 @@
-<?php
-/**
- * Template part for displaying results in search pages
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package wineboss
- */
+<div class="post">
+	<a href="<?php the_permalink();?>" class="post-thumbnail" title="<?php the_title();?>">
+		<?php 
+		if(has_post_thumbnail()){
+			the_post_thumbnail('blog-size'); 
+		}
+		?>
+	</a>
 
-?>
+	<h2 class="post-title">
+		<a href="<?php the_permalink();?>"  title="<?php the_title();?>">
+			<?php echo wb_short_title(15); ?>
+		</a>
+	</h2>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
-
-		<?php if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php
-			wb_posted_on();
-			wb_posted_by();
-			?>
-		</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
-
-	<?php wb_post_thumbnail(); ?>
-
-	<div class="entry-summary">
-		<?php the_excerpt(); ?>
-	</div><!-- .entry-summary -->
-
-	<footer class="entry-footer">
-		<?php wb_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-<?php the_ID(); ?> -->
+	<p class="post-excerpt">
+		<?php echo wb_post_excerpt(18); ?>
+	</p>
+</div>

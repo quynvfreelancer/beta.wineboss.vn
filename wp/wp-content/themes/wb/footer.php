@@ -198,6 +198,23 @@
         Hỗ trợ dịch vụ tất cả các ngày trong tuần
     </div>
 </div>
+<?php
+$total_qty = 0;
+if ( isset($_SESSION['shopping_cart']) ) {
+    $shopping_cart = $_SESSION['shopping_cart'];
+    if(!empty($shopping_cart)):
+        foreach ($shopping_cart as $cart_item):
+            $product_qty = $cart_item['product_quantity'];
+            $total_qty = $total_qty + $product_qty;
+        endforeach;
+    endif;
+}
+?>
+<a href="/gio-hang" class="mini-cart">
+   <span class="number cart-number" data-number="<?php echo $total_qty;?>">
+    <?php echo $total_qty; ?>
+</span>
+</a>
 <button class="btn-livechat">
     Livechat
 </button>

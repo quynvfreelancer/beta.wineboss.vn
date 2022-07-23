@@ -147,7 +147,7 @@
 	else:
 		?>
 		<div class="col-md-12 order-md-2 order-1">
-			<div class="cart-container">
+			<div class="cart-container entry">
 				<h1 class="page-title mb-3">Giỏ hàng</h1>
 				<p>Giỏ hàng trống</p>
 			</div>

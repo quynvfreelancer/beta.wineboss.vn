@@ -150,8 +150,20 @@ function wb_product_settings_meta_box( $meta_boxes ) {
 				'size' => 100
 			),
 			array(
-				'name' => 'Vùng làm vang',
-				'id'   => 'vung_lam_vang',
+				'name' => 'Nồng độ',
+				'id'   => 'nong_do',
+				'type' => 'textarea',
+				'size' => 100
+			),
+			array(
+				'name' => 'Hãng sản xuất',
+				'id'   => 'hang_san_xuat',
+				'type' => 'textarea',
+				'size' => 100
+			),
+			array(
+				'name' => 'Quy cách đóng gói',
+				'id'   => 'quy_cach',
 				'type' => 'textarea',
 				'size' => 100
 			),
